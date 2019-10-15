@@ -1,0 +1,25 @@
+.storyUser {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.story-list li {
+  display: flex;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.story-list li .story-user {
+  margin-left: 10px;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.story-list li .story-timeline {
+  font-size: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  margin-top: 5px;
+  opacity: 0.5;
+}

@@ -1,0 +1,40 @@
+.main-right-align {
+  display: block;
+  width: 250px;
+}
+.story-user {
+  height: 20px;
+}
+
+.right-user-info {
+  display: flex;
+  height: 32px;
+  margin-bottom: 10px;
+}
+
+.right-user-info .userId {
+  margin-left: 10px;
+  margin-top: 7px;
+}
+
+.right-story-box {
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 5px;
+  background-color: white;
+  height: 250px;
+  padding: 15px;
+}
+
+.right-story-nav {
+  font-size: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.right-story-nav span:last-child {
+  position: absolute;
+  right: 0;
+}
+
+.right-story-nav span:first-child {
+  opacity: 0.5;
+}

@@ -1,0 +1,20 @@
+.user {
+  display: flex;
+  padding: 10px;
+  height: 50px;
+}
+.user .userId {
+  padding-left: 10px;
+  padding-top: 7px;
+}
+
+.user img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.suggestion-image img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

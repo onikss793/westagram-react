@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 600px;
+}
+
+ul {
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+button {
+  background-color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgb(201, 201, 201);
+  height: 50px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  background-color: rgba(56, 151, 240, 0.9);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.inputMatch {
+  color: rgba(56, 151, 240, 0.7);
+}
+
+.search {
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png");
+  width: 25px;
+  height: 25px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.heart-img {
+  background-image: url("../images/westagram1.png");
+  background-position: -146px -263px;
+  background-size: 320px 334px;
+  background-repeat: no-repeat;
+}
+
+.my-page {
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png");
+  width: 25px;
+  height: 25px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}

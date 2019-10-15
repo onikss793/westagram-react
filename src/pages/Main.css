@@ -1,0 +1,20 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-align {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  background-color: #fafafa;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.post-story-align {
+  width: 700px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
