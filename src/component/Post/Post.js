@@ -3,6 +3,7 @@ import User from "../User/User";
 import Comments from "../Comments/Comments";
 import PostTools from "./PostTools";
 import PostImage from "./PostImage";
+import CommentsData from "../Comments/CommentsData";
 import "./Post.scss";
 import "../../style/common.scss";
 
@@ -23,16 +24,7 @@ class Post extends Component {
           desc: "저희 수강생이랍니다. ",
           timeStamp: "42분전"
         },
-        commentInfo: [
-          {
-            userId: "Lebron James",
-            desc: "Nice Picture!"
-          },
-          {
-            userId: "Derrick Rose",
-            desc: "Hello!"
-          }
-        ]
+        commentInfo: CommentsData
       }
     };
   }

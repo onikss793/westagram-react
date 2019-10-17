@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import SearchList from "./SearchList";
 import "./Nav.scss";
+import NavRight from "./NavRight";
+import TextLogo from "./TextLogo";
 
 const data = [
   "wecode",
@@ -43,9 +45,7 @@ class Nav extends Component {
     return (
       <div className="nav">
         <div className="nav-align">
-          <div>
-            <div className="instagram-logo"></div>
-          </div>
+          <TextLogo />
           <form className="searchForm">
             <input
               value={inputVal}
@@ -59,11 +59,7 @@ class Nav extends Component {
               searchListClass={className.join(" ")}
             />
           </form>
-          <div className="nav-right">
-            <div className="search"></div>
-            <div className="heart-img"></div>
-            <div className="my-page"></div>
-          </div>
+          <NavRight />
         </div>
       </div>
     );

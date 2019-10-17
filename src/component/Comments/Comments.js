@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Comments.scss";
-//import CommentList from "./CommentList";
+import CommentList from "./CommentList";
 
 class Comments extends Component {
   idCount = 0;
@@ -54,18 +54,7 @@ class Comments extends Component {
               <span>{mainDesc.desc}</span>
             </li>
           </ul>
-          <ul>
-            {commentInfo.map((el, i) => {
-              return (
-                <li key={i} className="comment">
-                  <span className="post-user">
-                    <b>{el.userId}</b>
-                  </span>
-                  <span>{el.desc}</span>
-                </li>
-              );
-            })}
-          </ul>
+          <CommentList commentInfo={commentInfo} />
           <span className="main-timeline">{mainDesc.timeStamp}</span>
         </div>
         <form className="comment-form" onSubmit={handelSubmit}>
