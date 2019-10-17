@@ -1,0 +1,57 @@
+@import "../../style/common.scss";
+
+.right-suggestion {
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 5px;
+  background-color: white;
+  height: 130px;
+  padding: 15px;
+  margin-top: 20px;
+  height: 190px;
+
+  .right-suggestion-nav {
+    font-size: $smlFont;
+    margin-bottom: 10px;
+    position: relative;
+
+    .suggestion-nav-left {
+      opacity: 0.5;
+    }
+
+    .suggestion-nav-right {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+.suggestion-list {
+  li {
+    font-size: $deFont;
+    display: flex;
+    margin-bottom: 5px;
+    position: relative;
+
+    .suggestion-image {
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    }
+
+    .suggestion-id {
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    .suggestion-follow {
+      position: absolute;
+      font-size: $smlFont;
+      margin-top: 10px;
+      right: 0;
+      color: $btnColor;
+      opacity: 0.7;
+    }
+  }
+}

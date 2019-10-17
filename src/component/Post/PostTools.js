@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "../style/PostTools.css";
+import "./PostTools.scss";
+
 class PostTools extends Component {
   render() {
     return (

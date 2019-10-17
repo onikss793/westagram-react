@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from "react";
-import "../style/Comments.css";
+import React, { Component } from "react";
+import "./Comments.scss";
+//import CommentList from "./CommentList";
 
 class Comments extends Component {
   idCount = 0;
@@ -12,21 +13,6 @@ class Comments extends Component {
       }
     };
   }
-
-  renderCommentList = list => {
-    let { idCount } = this;
-    return list.map(el => {
-      idCount++;
-      return (
-        <li key={idCount} className="comment">
-          <span className="post-user">
-            <b>{el.userId}</b>
-          </span>
-          <span>{el.desc}</span>
-        </li>
-      );
-    });
-  };
 
   handleChange = e => {
     if (e.target.value.length > 0) {
@@ -50,34 +36,48 @@ class Comments extends Component {
   handelSubmit = e => {
     e.preventDefault();
     this.props.onCreate(this.state.comments);
+    this.setState({ comments: { userId: "wecode_bootcamp", desc: "" } });
   };
 
   render() {
     const { mainDesc, commentInfo } = this.props;
-    const { renderCommentList, handleChange, handelSubmit } = this;
+    const { handleChange, handelSubmit } = this;
+    const { desc } = this.state.comments;
     return (
-      <Fragment>
+      <>
         <div className="comments">
           <ul>
-            <li className="main-desc">
-              <span className="post-user">
+            <li>
+              <span>
                 <b>{mainDesc.userId}</b>
               </span>
-              <span className="post-desc">{mainDesc.desc}</span>
+              <span>{mainDesc.desc}</span>
             </li>
           </ul>
-          <ul>{renderCommentList(commentInfo)}</ul>
+          <ul>
+            {commentInfo.map((el, i) => {
+              return (
+                <li key={i} className="comment">
+                  <span className="post-user">
+                    <b>{el.userId}</b>
+                  </span>
+                  <span>{el.desc}</span>
+                </li>
+              );
+            })}
+          </ul>
           <span className="main-timeline">{mainDesc.timeStamp}</span>
         </div>
         <form className="comment-form" onSubmit={handelSubmit}>
           <input
+            value={desc}
             onChange={handleChange}
             className="comment-input"
             placeholder="댓글 달기..."
           />
           <button className="comment-post">게시</button>
         </form>
-      </Fragment>
+      </>
     );
   }
 }

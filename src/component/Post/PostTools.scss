@@ -1,0 +1,39 @@
+$toolImgSize: 20px;
+
+.tools {
+  margin-top: 5px;
+  margin-left: 5px;
+  position: relative;
+
+  button {
+    border: none;
+
+    .share {
+      position: absolute;
+      right: 5px;
+    }
+    .share-img {
+      background-image: url("../../images/share.png");
+      width: $toolImgSize;
+      height: $toolImgSize;
+      background-size: 85%;
+      background-repeat: no-repeat;
+    }
+
+    .comment-img {
+      background-image: url("../../images/comment.png");
+      width: $toolImgSize;
+      height: $toolImgSize;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.heart-img {
+  background-image: url("../../images/heart.png");
+  width: $toolImgSize;
+  height: $toolImgSize;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}

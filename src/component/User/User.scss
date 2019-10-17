@@ -1,0 +1,15 @@
+.user {
+  display: flex;
+  padding: 10px;
+  height: 50px;
+
+  img {
+    width: 30px;
+    border-radius: 50%;
+  }
+
+  .userId {
+    padding-left: 10px;
+    padding-top: 7px;
+  }
+}

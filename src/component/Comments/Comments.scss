@@ -1,0 +1,49 @@
+@import "../../style/common.scss";
+
+.comments {
+  padding-left: 10px;
+  border-bottom: 1px solid rgb(192, 192, 192);
+  height: 90px;
+  overflow-y: auto;
+
+  li {
+    padding-top: 5px;
+
+    span {
+      font-size: $deFont;
+      margin-right: 3px;
+    }
+  }
+
+  .main-timeline {
+    font-size: 8px;
+    color: rgb(133, 133, 133);
+    margin-left: 2px;
+  }
+}
+
+.comment-form {
+  height: 35px;
+
+  input {
+    width: 85%;
+    height: 100%;
+    border: 0;
+    padding-left: 10px;
+  }
+
+  .comment-post {
+    border: none;
+    color: $btnColor;
+    opacity: 0.5;
+    background-color: white;
+  }
+
+  .comment-post-active {
+    border: none;
+    color: $btnColor;
+    opacity: 1;
+    background-color: white;
+    cursor: pointer;
+  }
+}
