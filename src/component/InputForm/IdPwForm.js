@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import InputBox from "./InputBox";
 import Warning from "../Warning/Warning";
 import { withRouter } from "react-router-dom";
-import "../../style/common.scss";
+import "./IdPwForm.scss";
+import LoginData from "./LoginData";
 
 class IdPwForm extends Component {
   constructor() {
@@ -13,7 +14,8 @@ class IdPwForm extends Component {
       idActive: false,
       pwActive: false,
       warning: false,
-      loginCheck: true
+      idValue: "",
+      pwValue: ""
     };
   }
 
@@ -36,26 +38,42 @@ class IdPwForm extends Component {
   };
 
   goToMain = () => {
-    const { loginCheck } = this.state;
-    loginCheck ? this.props.history.push("/main") : window.location.reload();
+    const { idValue, pwValue } = this.state;
+    const { history } = this.props;
+    LoginData.forEach(user => {
+      Object.values(user).includes(idValue) &&
+      Object.values(user).includes(pwValue)
+        ? history.push("/main")
+        : window.location.reload();
+    });
   };
 
   makeWarning = () => {
     const { idActive } = this.state;
-    if (idActive === true) {
-      this.setState({ warning: false });
-    } else {
-      this.setState({ warning: true });
-    }
+    idActive
+      ? this.setState({ warning: false })
+      : this.setState({ warning: true });
   };
 
   handleSubmit = e => {
     e.preventDefault();
   };
 
+  updateInputVal = (name, textValue) => {
+    this.setState({
+      [name]: textValue
+    });
+  };
+
   render() {
     const { placeholder, type, warning, idActive, pwActive } = this.state;
-    const { idActivate, pwActivate, handleSubmit, goToMain } = this;
+    const {
+      idActivate,
+      pwActivate,
+      handleSubmit,
+      goToMain,
+      updateInputVal
+    } = this;
     return (
       <form onSubmit={handleSubmit} className="idPasswordForm">
         <InputBox
@@ -63,6 +81,7 @@ class IdPwForm extends Component {
           type={type.id}
           active={idActivate}
           name="idValue"
+          loginCheck={updateInputVal}
         />
         <Warning state={warning} />
         <InputBox
@@ -70,6 +89,7 @@ class IdPwForm extends Component {
           type={type.pw}
           active={pwActivate}
           name="pwValue"
+          loginCheck={updateInputVal}
         />
         <button
           className={idActive && pwActive ? "active" : "btnLogIn"}

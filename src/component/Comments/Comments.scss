@@ -6,6 +6,13 @@
   height: 90px;
   overflow-y: auto;
 
+  div {
+    span {
+      font-size: $deFont;
+      margin-right: 3px;
+    }
+  }
+
   li {
     padding-top: 5px;
 

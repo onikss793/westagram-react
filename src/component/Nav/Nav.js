@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import SearchList from "./SearchList";
+import SearchList from "./SearchList/SearchList";
 import "./Nav.scss";
-import NavRight from "./NavRight";
+import NavRight from "./NavRight/NavRight";
 import TextLogo from "./TextLogo";
 
 const data = [

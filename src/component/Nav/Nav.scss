@@ -1,5 +1,6 @@
 @import "../../style/common.scss";
-@import "../Post/PostTools.scss";
+@import "../Post/PostTools/PostTools.scss";
+
 .nav {
   border-bottom: $border;
   position: fixed;
@@ -34,29 +35,6 @@
         border-style: none;
         border: $border;
         font-size: 12px;
-      }
-    }
-
-    .searchList {
-      position: absolute;
-      left: 0;
-      top: 30px;
-      width: 200px;
-
-      li {
-        border: $border;
-        font-size: 12px;
-        background-color: white;
-        text-align: center;
-        color: rgb(180, 180, 180);
-        height: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .inputMatch {
-          color: $btnColor;
-        }
       }
     }
 

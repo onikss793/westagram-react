@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import User from "../User/User";
-import StoryContent from "../Story/StoryContent";
+import StoryContent from "./StoryContent/StoryContent";
 import "./Story.scss";
 
 class Story extends Component {

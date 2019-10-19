@@ -1,0 +1,32 @@
+@import "../../../style/common.scss";
+
+.suggestion-list {
+  li {
+    font-size: $deFont;
+    display: flex;
+    margin-bottom: 5px;
+    position: relative;
+
+    .suggestion-image {
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    }
+
+    .suggestion-id {
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    .suggestion-follow {
+      position: absolute;
+      font-size: $smlFont;
+      margin-top: 10px;
+      right: 0;
+      color: $btnColor;
+      opacity: 0.7;
+    }
+  }
+}

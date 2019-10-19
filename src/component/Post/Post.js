@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import User from "../User/User";
 import Comments from "../Comments/Comments";
-import PostTools from "./PostTools";
+import PostTools from "./PostTools/PostTools";
 import PostImage from "./PostImage";
 import CommentsData from "../Comments/CommentsData";
 import "./Post.scss";

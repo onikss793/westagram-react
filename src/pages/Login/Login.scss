@@ -17,51 +17,6 @@
     margin-bottom: 30px;
   }
 
-  .idPasswordForm {
-    input {
-      width: 100%;
-    }
-
-    .logInput {
-      padding: 9px 0 7px 8px;
-      height: 40px;
-      background-color: #fafafa;
-      margin-bottom: 5px;
-      margin-top: 5px;
-      font-size: $deFont;
-      border: $border;
-      border-radius: 4px;
-
-      &::placeholder {
-        margin: 1px 1px 1px 1px;
-        color: #8a8a8a;
-      }
-    }
-
-    .active {
-      background-color: rgba(56, 151, 240, 0.9);
-      opacity: 1;
-      cursor: pointer;
-      width: 100%;
-      border: 0;
-      border-radius: 3px;
-      color: white;
-      height: 35px;
-      font-size: $deFont;
-      transition: all ease 0.5s;
-    }
-
-    .btnLogIn {
-      background-color: rgba(56, 151, 240, 0.3);
-      width: 100%;
-      border: 0;
-      border-radius: 3px;
-      color: white;
-      height: 35px;
-      font-size: $deFont;
-      transition: all ease 0.5s;
-    }
-  }
   .forgetPassword {
     position: absolute;
     bottom: 30px;

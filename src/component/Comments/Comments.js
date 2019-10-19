@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Comments.scss";
 import CommentList from "./CommentList";
+import CommentForm from "./CommentForm";
+import MainDesc from "./MainDesc";
 
 class Comments extends Component {
   idCount = 0;
@@ -46,26 +48,15 @@ class Comments extends Component {
     return (
       <>
         <div className="comments">
-          <ul>
-            <li>
-              <span>
-                <b>{mainDesc.userId}</b>
-              </span>
-              <span>{mainDesc.desc}</span>
-            </li>
-          </ul>
+          <MainDesc mainDesc={mainDesc} />
           <CommentList commentInfo={commentInfo} />
           <span className="main-timeline">{mainDesc.timeStamp}</span>
         </div>
-        <form className="comment-form" onSubmit={handelSubmit}>
-          <input
-            value={desc}
-            onChange={handleChange}
-            className="comment-input"
-            placeholder="댓글 달기..."
-          />
-          <button className="comment-post">게시</button>
-        </form>
+        <CommentForm
+          onSubmit={handelSubmit}
+          value={desc}
+          onChange={handleChange}
+        />
       </>
     );
   }

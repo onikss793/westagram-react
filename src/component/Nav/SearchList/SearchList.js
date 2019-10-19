@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Nav.scss";
+import "./SearchList.scss";
 
 class SearchList extends Component {
   constructor() {

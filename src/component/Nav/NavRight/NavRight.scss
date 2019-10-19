@@ -1,0 +1,35 @@
+@import "../../Post/PostTools/PostTools.scss";
+
+.nav-right {
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+
+  div {
+    margin-right: 10px;
+  }
+
+  .search {
+    background-image: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png");
+    width: $toolImgSize;
+    height: $toolImgSize;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .heart-img {
+    background-image: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png");
+    width: $toolImgSize;
+    height: $toolImgSize;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .my-page {
+    background-image: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png");
+    width: $toolImgSize;
+    height: $toolImgSize;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}

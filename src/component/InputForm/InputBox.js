@@ -5,8 +5,7 @@ class InputBox extends Component {
     super();
     this.state = {
       textValue: "",
-      active: false,
-      name: ""
+      active: false
     };
   }
 
@@ -15,13 +14,17 @@ class InputBox extends Component {
       const { textValue } = this.state;
       if (textValue.length > 0) {
         this.setState({ active: true }, () => {
-          const { active } = this.props;
+          const { active, loginCheck, name } = this.props;
+          const { textValue } = this.state;
           active(this.state.active);
+          loginCheck(name, textValue);
         });
       } else {
         this.setState({ active: false }, () => {
-          const { active } = this.props;
+          const { active, loginCheck, name } = this.props;
+          const { textValue } = this.state;
           active(this.state.active);
+          loginCheck(name, textValue);
         });
       }
     });
