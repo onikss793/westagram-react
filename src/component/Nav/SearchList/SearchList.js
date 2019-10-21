@@ -8,10 +8,8 @@ class SearchList extends Component {
       inputVal: ""
     };
   }
-  idCount = 0;
 
   getSearchList = list => {
-    let { idCount } = this;
     const inputVal = this.props.inputVal;
     let matched = [];
     let unMatched = [];
@@ -22,10 +20,10 @@ class SearchList extends Component {
         unMatched.push(list[i]);
       }
     }
-    return matched.map(el => {
+    return matched.map((el, i) => {
       let matchedEl;
       let unMatchedEl;
-      idCount++;
+
       if (el.startsWith(inputVal)) {
         matchedEl = el.slice(0, inputVal.length);
         unMatchedEl = el.slice(inputVal.length);
@@ -33,7 +31,7 @@ class SearchList extends Component {
         unMatchedEl = el;
       }
       return (
-        <li key={idCount}>
+        <li key={i}>
           <span className="inputMatch">{matchedEl}</span>
           {unMatchedEl}
         </li>

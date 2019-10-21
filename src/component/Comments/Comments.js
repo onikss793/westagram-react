@@ -17,15 +17,13 @@ class Comments extends Component {
   }
 
   handleChange = e => {
-    if (e.target.value.length > 0) {
-      document
-        .querySelector(".comment-post")
-        .classList.add("comment-post-active");
-    } else {
-      document
-        .querySelector(".comment-post")
-        .classList.remove("comment-post-active");
-    }
+    e.target.value.length > 0
+      ? document
+          .querySelector(".comment-post")
+          .classList.add("comment-post-active")
+      : document
+          .querySelector(".comment-post")
+          .classList.remove("comment-post-active");
 
     this.setState({
       comments: {

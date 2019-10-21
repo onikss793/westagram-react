@@ -1,7 +1,9 @@
 @import "../../style/common.scss";
 
 .logInContainer {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   margin: 20px auto;
   padding: 50px;
   width: 400px;
@@ -18,9 +20,8 @@
   }
 
   .forgetPassword {
-    position: absolute;
-    bottom: 30px;
-    left: 130px;
+    margin: 0 auto;
+    margin-top: 150px;
 
     div {
       color: rgb(28, 70, 109);
