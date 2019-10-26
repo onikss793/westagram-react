@@ -51,8 +51,7 @@ class IdPwForm extends Component {
           localStorage.setItem("userToken", res.token);
           history.push("/main");
         } else {
-          console.log(res.message);
-          //window.location.reload();
+          window.location.reload();
         }
       });
   };

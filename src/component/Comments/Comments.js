@@ -5,7 +5,6 @@ import CommentForm from "./CommentForm";
 import MainDesc from "./MainDesc";
 
 class Comments extends Component {
-  idCount = 0;
   constructor() {
     super();
     this.state = {
