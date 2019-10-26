@@ -3,7 +3,6 @@ import InputBox from "./InputBox";
 import Warning from "../Warning/Warning";
 import { withRouter } from "react-router-dom";
 import "./IdPwForm.scss";
-import LoginData from "./LoginData";
 
 class IdPwForm extends Component {
   constructor() {
@@ -37,15 +36,25 @@ class IdPwForm extends Component {
       : this.setState({ pwActive: false });
   };
 
-  goToMain = () => {
-    const { idValue, pwValue } = this.state;
-    const { history } = this.props;
-    LoginData.forEach(user => {
-      Object.values(user).includes(idValue) &&
-      Object.values(user).includes(pwValue)
-        ? history.push("/main")
-        : window.location.reload();
-    });
+  login = () => {
+    fetch("http://localhost:8000/account/login", {
+      method: "post",
+      body: JSON.stringify({
+        user_name: this.state.idValue,
+        password: this.state.pwValue
+      })
+    })
+      .then(res => res.json())
+      .then(res => {
+        const { history } = this.props;
+        if (res.message === "success") {
+          localStorage.setItem("userToken", res.token);
+          history.push("/main");
+        } else {
+          console.log(res.message);
+          //window.location.reload();
+        }
+      });
   };
 
   makeWarning = () => {
@@ -71,7 +80,7 @@ class IdPwForm extends Component {
       idActivate,
       pwActivate,
       handleSubmit,
-      goToMain,
+      login,
       updateInputVal
     } = this;
     return (
@@ -93,7 +102,7 @@ class IdPwForm extends Component {
         />
         <button
           className={idActive && pwActive ? "active" : "btnLogIn"}
-          onClick={goToMain}
+          onClick={login}
         >
           로그인
         </button>

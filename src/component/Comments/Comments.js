@@ -12,9 +12,31 @@ class Comments extends Component {
       comments: {
         userId: "wecode_bootcamp",
         desc: ""
-      }
+      },
+      commentInfo: []
     };
+    this.getComments();
   }
+
+  getComments = () => {
+    fetch("http://localhost:8000/main")
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ commentInfo: res });
+      });
+  };
+
+  updateComments = () => {
+    fetch("http://localhost:8000/main", {
+      method: "post",
+      headers: { Authorization: localStorage.getItem("userToken") },
+      body: JSON.stringify({
+        comment_text: this.state.comments.desc
+      })
+    })
+      .then(res => res.json())
+      .then(() => this.getComments());
+  };
 
   handleChange = e => {
     e.target.value.length > 0
@@ -35,14 +57,15 @@ class Comments extends Component {
 
   handelSubmit = e => {
     e.preventDefault();
-    this.props.onCreate(this.state.comments);
+    const { updateComments } = this;
+    updateComments();
     this.setState({ comments: { userId: "wecode_bootcamp", desc: "" } });
   };
 
   render() {
-    const { mainDesc, commentInfo } = this.props;
+    const { mainDesc } = this.props;
     const { handleChange, handelSubmit } = this;
-    const { desc } = this.state.comments;
+    const { comments, commentInfo } = this.state;
     return (
       <>
         <div className="comments">
@@ -52,7 +75,7 @@ class Comments extends Component {
         </div>
         <CommentForm
           onSubmit={handelSubmit}
-          value={desc}
+          value={comments.desc}
           onChange={handleChange}
         />
       </>
